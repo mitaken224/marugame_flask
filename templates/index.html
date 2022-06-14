@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>うどん屋さんガチャ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+
+<body>
+    <div class="page">
+        <h1>うどん屋さんガチャ</h1>
+
+        <form action="{{ url_for('result') }}" method="POST">
+            <input type="number" min="0" step="10" name="budget" value="{{ budget }}" placeholder="予算" required/>
+            <br>
+            <input type="submit" value="回す" />
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>うどん屋さん1000円ガチャ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+
+<body>
+    <div class="page">
+        <h2>うどん</h2>
+        {% if udon | length == 0 %}
+            なし
+        {% else %} 
+            <table>
+                <tr>
+                {% for u in udon %}
+                    <td>{{ u }}</td>
+                {% endfor %}
+            </tr>
+            </table>
+        {% endif %} 
+
+        <h2>サイドメニュー</h2>
+        {% if s_result | length == 0 %}
+            なし
+        {% else %}
+            <table>
+            {% for side_menu in s_result %}
+                <tr>
+                {% for s in side_menu %}
+                    <td>{{ s }}</td>
+                {% endfor %}
+                </tr>
+            {% endfor %}
+            </table>
+        {% endif%}
+
+        <h2>合計：{{ sum }}円</h2>
+        <a href="{{ url_for('index') }}">戻る</a>
+    </div>
+</body>
+
+</html>
