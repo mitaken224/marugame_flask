@@ -102,4 +102,5 @@ def selection(budget):
     ###合計金額の算出###
     sum = budget - money  # 合計金額=予算-残金
 
+    ###選出されたうどん、サイドメニューと合計金額を返す###
     return udon, s_result, sum
